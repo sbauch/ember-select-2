@@ -456,7 +456,7 @@ var Select2Component = Ember.Component.extend({
     }
 
     if (this.isRecordArray(value) && !(tag instanceof DS.Model)) {
-      object = value.get('store').createRecord(value.get('type'));
+      object = value.get('store').createRecord(value.get('type.modelName'));
       object.set(this.get('optionLabelPath'), tag[this.get('optionLabelPath')]);
     } else if ((tag instanceof Ember.Object) === false) {
       object = Ember.Object.create(tag);
