@@ -590,7 +590,7 @@ var Select2Component = Ember.Component.extend({
       this._select.select2("val", value);
     } else {
       // otherwise set the full object via "data"
-      if (value instanceof Ember.ArrayProxy) {
+      if (value instanceof DS.ManyArray) {
         value = value.toArray();
       }
       this._select.select2("data", value);
